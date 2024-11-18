@@ -1,4 +1,5 @@
-import { Flex } from "@/once-ui/components";
+{
+  /*import { Flex } from "@/once-ui/components";
 import MasonryGrid from "@/components/gallery/MasonryGrid";
 import { baseURL, renderContent } from "@/app/resources";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
@@ -12,10 +13,10 @@ export async function generateMetadata(
 	const { gallery } = renderContent(t);
 
 	const title = gallery.title;
-	const description = gallery.description;
+const description = gallery.description;
 	const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
 
-	return {
+	{return {
 		title,
 		description,
 		openGraph: {
@@ -76,4 +77,5 @@ export default function Gallery(
             <MasonryGrid/>
         </Flex>
     );
+}*/
 }
