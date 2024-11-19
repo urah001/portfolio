@@ -482,7 +482,7 @@ const work = {
   // All projects will be listed on the /home and /work routes
 };
 
-/*const gallery = {
+const gallery = {
   label: "Gallery",
   title: "My photo gallery",
   description: `A photo collection by ${person.name}`,
@@ -559,8 +559,8 @@ const work = {
       orientation: "horizontal",
     },
   ],
-};*/
+};
 
-export { person, social, newsletter, home, about, blog, work };
+export { person, social, newsletter, home, about, blog, work, gallery };
 // put this back in the obj
 //gallery;
