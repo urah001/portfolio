@@ -182,7 +182,7 @@ const createI18nContent = (t) => {
     // All projects will be listed on the /home and /work routes
   };
 
-  /*const gallery = {
+  const gallery = {
     label: t("gallery.label"),
     title: t("gallery.title"),
     description: t("gallery.description", { name: person.name }),
@@ -259,7 +259,7 @@ const createI18nContent = (t) => {
         orientation: "horizontal",
       },
     ],
-  };*/
+  };
   return {
     person,
     social,
