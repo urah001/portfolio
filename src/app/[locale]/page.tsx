@@ -126,6 +126,7 @@ export default function Home(
 					</Flex>
 				
 			</Flex>
+			{/* slide show with three picture */}
 			<RevealFx translateY="16" delay={0.6}>
 				<Projects range={[1,1]} locale={locale}/>
 			</RevealFx>
@@ -147,7 +148,8 @@ export default function Home(
 					</Flex>
 				</Flex>
 			)}
-			<Projects range={[2]} locale={locale}/>
+			{/* two slideshows  */}
+		 {/* <Projects range={[2]} locale={locale}/>  */}
 			{ newsletter.display &&
 				<Mailchimp newsletter={newsletter} />
 			}
