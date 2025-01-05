@@ -13,7 +13,7 @@ const person = {
   languages: ["English", ""], // optional: Leave the array empty if you don't want to display languages
 };
 
-const newsletter = {
+{/*const newsletter = {
   display: true,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: (
@@ -22,7 +22,7 @@ const newsletter = {
       intersection of creativity and engineering.
     </>
   ),
-};
+};*/}
 
 const social = [
   // Links are automatically displayed.
@@ -562,6 +562,6 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, /*newsletter,*/ home, about, blog, work, gallery };
 // put this back in the obj
 //gallery;
