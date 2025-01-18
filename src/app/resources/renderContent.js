@@ -1,6 +1,6 @@
 import {
   person,
-  newsletter,
+  // newsletter,
   social,
   home,
   about,
@@ -18,7 +18,7 @@ const renderContent = (t) => {
     return {
       person,
       social,
-      newsletter,
+      // newsletter,
       home,
       about,
       blog,
