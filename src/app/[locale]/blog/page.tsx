@@ -46,7 +46,7 @@ export default function Blog(
 	unstable_setRequestLocale(locale);
 
 	const t = useTranslations();
-	const { person, blog, newsletter } = renderContent(t);
+	const { person, blog } = renderContent(t);
     return (
         <Flex
 			fillWidth maxWidth="s"
