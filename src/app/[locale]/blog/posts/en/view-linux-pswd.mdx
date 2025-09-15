@@ -1,0 +1,112 @@
+---
+title: "How to view saved Wi‑Fi passwords in Linux system"
+publishedAt: "2025-09-15"
+image: "/images/blog-img/dataLeak.svg"
+summary: "How to locate saved Wi‑Fi passwords on a Linux system (NetworkManager). This guide is technical and requires root access — follow responsibly and only on networks you own or have permission to inspect."
+tags: ["security", "networking", "tutorial"]
+---
+
+import Callout from "@/components/Callout";
+
+# How to view saved Wi‑Fi passwords in Kali Linux
+
+> **Quick note:** This tutorial shows how NetworkManager stores connection profiles and how to read them. You **must** have `sudo` (root) access to view these files. Only inspect networks you own or have explicit permission to audit.
+
+I just discovered a simple and reliable way to find saved Wi‑Fi passwords on a Linux system that uses NetworkManager (this includes Kali Linux). It's technical, but straightforward if you follow the steps below.
+
+---
+
+## What you're looking for
+
+NetworkManager stores connection profiles at:
+
+```bash
+/etc/NetworkManager/system-connections/
+```
+
+Each saved connection is a file (often with extension `.nmconnection` or no visible extension) that contains a `[wifi-security]` section. The password is usually stored under the `psk` key.
+
+---
+
+## Step-by-step
+
+1. Open a terminal.
+2. Change to the directory that holds connection profiles:
+
+```bash
+cd /etc/NetworkManager/system-connections/
+```
+
+3. List the available connection files:
+
+```bash
+ls -l
+# or (show hidden if any)
+ls -la
+```
+
+4. View the connection file you want (replace `WIFI_SSID_Name` with the exact filename):
+
+```bash
+sudo cat 'WIFI_SSID_Name'
+# e.g. sudo cat 'W3B.nmconnection' or sudo cat 'W3B'
+```
+
+When prompted, enter your sudo password.
+
+You should see a file that looks like this :
+
+```ini
+[connection]
+id=W3B
+uuid=0a06ac9d-1937-183e-a173-01c02284e739
+type=wifi
+interface-name=wlan0
+
+[wifi]
+mode=infrastructure
+ssid=W3B
+
+[wifi-security]
+auth-alg=open
+key-mgmt=wpa-psk
+psk=THISisTHEpsw
+```
+
+> The value after `psk=` is the Wi‑Fi password (pre‑shared key).
+
+---
+
+## Faster alternatives
+
+If you want to search all stored profiles for passwords in one go:
+
+```bash
+# show all lines containing 'psk=' in every profile (requires sudo)
+sudo grep -H "psk=" /etc/NetworkManager/system-connections/*
+```
+
+Or using `nmcli` to show a specific connection (might still require root depending on permissions):
+
+```bash
+sudo nmcli connection show "W3B" | sed -n '1,200p'
+# or to show secrets (some NetworkManager versions require --show-secrets):
+sudo nmcli connection show "W3B" --show-secrets
+```
+
+---
+
+## Security & legal warning
+
+- **Only** use this method on machines and networks you own or are authorized to audit.
+- Viewing saved passwords requires root privileges — treat them sensitively.
+- Many modern setups encrypt these files or protect secrets; your system settings and distribution may be different.
+
+---
+
+## Troubleshooting
+
+- If you get `Permission denied`, make sure you used `sudo` or that your account is in the `sudoers` file.
+- If a profile file is encrypted or missing `psk=`, the password may be stored in a keyring (e.g., GNOME Keyring) or managed elsewhere.
+
+---

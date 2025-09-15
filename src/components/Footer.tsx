@@ -3,6 +3,7 @@ import { Flex, IconButton, SmartLink, Text } from "@/once-ui/components"
 import { useTranslations } from "next-intl";
 import styles from './Footer.module.scss'
 
+
 export const Footer = () => {
     const currentYear = new Date().getFullYear();
 
