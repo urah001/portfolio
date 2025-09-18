@@ -3,10 +3,10 @@ title: "Steganography: Hiding Data in Plain Sight"
 publishedAt: "2025-01-18"
 image: "/images/blog-img/stega.jpeg"
 summary: "information are everywhere , you just have to look at the right path with the key."
-tag: "Journal"
+tag: "Security"
 ---
 
-*Steganography*
+_Steganography_
 : Hiding Data in Plain Sight
 Steganography is a hacking technique that's both fascinating and mysterious. It involves hiding data within images, audio, or videos without anyone noticing.
 
@@ -14,13 +14,13 @@ What is Steganography?
 Steganography is an old concept where secret messages are embedded within normal files. In modern hacking, sensitive data (like payloads, keys, or confidential information) is hidden within image, audio, or video pixels.
 
 How Does it Work?
-Imagine having an *image file* that looks normal but contains secret code or malware.
+Imagine having an _image file_ that looks normal but contains secret code or malware.
 
 There are several techniques:
 
-1. *Least Significant Bit (LSB) Technique*: Image pixels are read one by one, and the last bit (which is negligible) is modified to embed data.
-2. *Audio/Video Steganography*: Data is hidden in unused spaces (metadata or noise) within audio or video files.
-3. *Tools for Steganography*: Steghide, OpenStego, and ExifTool are popular tools used for steganography.
+1. _Least Significant Bit (LSB) Technique_: Image pixels are read one by one, and the last bit (which is negligible) is modified to embed data.
+2. _Audio/Video Steganography_: Data is hidden in unused spaces (metadata or noise) within audio or video files.
+3. _Tools for Steganography_: Steghide, OpenStego, and ExifTool are popular tools used for steganography.
 
 Practical Example
 Let's say you have an image (`spoiler.jpg`) and want to hide a secret text file (`Meta-Payload.txt`). You can use Steghide to embed the file:
@@ -33,15 +33,17 @@ steghide embed -cf spoiler.jpg -ef Meta-Payload.txt
 Now, the message is hidden within the image.
 
 Uses of Steganography
-1. *Secure Communication*: Confidential data can be shared without arousing suspicion.
-2. *Malware Distribution*: Hackers distribute malicious payloads within images.
-3. *Digital Watermarking*: Steganography is used for copyright protection.
+
+1. _Secure Communication_: Confidential data can be shared without arousing suspicion.
+2. _Malware Distribution_: Hackers distribute malicious payloads within images.
+3. _Digital Watermarking_: Steganography is used for copyright protection.
 
 How to Detect Steganography?
-1. *Histogram Analysis*: Abnormal changes in the image histogram can indicate hidden data.
-2. *Steganalysis Tools*: Tools like Stegdetect or StegSecret can detect steganography.
+
+1. _Histogram Analysis_: Abnormal changes in the image histogram can indicate hidden data.
+2. _Steganalysis Tools_: Tools like Stegdetect or StegSecret can detect steganography.
 
 How to Stay Secure?
-1. *Validate Downloads*: Check the integrity of downloaded files.
-2. *Encryption + Steganography*: Use encryption and steganography for double security.
 
+1. _Validate Downloads_: Check the integrity of downloaded files.
+2. _Encryption + Steganography_: Use encryption and steganography for double security.
