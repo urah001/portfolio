@@ -55,6 +55,7 @@ const Logo: React.FC<LogoProps> = ({
                 <img
                     style={{ height: `var(--static-space-${sizeMap[size]})`, width: 'auto' }}
                     alt="Trademark"
+                    loading='lazy'
                     src={iconSrc}
                 />
             )}
@@ -68,6 +69,7 @@ const Logo: React.FC<LogoProps> = ({
                 <img
                     style={{ height: `var(--static-space-${sizeMap[size]})`, width: 'auto'}}
                     alt="Trademark"
+                    loading='lazy'
                     src={wordmarkSrc}
                 />
             )}

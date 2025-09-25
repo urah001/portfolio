@@ -51,7 +51,7 @@ export async function GET(request: Request) {
                             alignItems: 'center',
                             gap: '5rem'
                         }}>
-                        <img src={'https://' + baseURL + person.avatar}
+                        <img src={'https://' + baseURL + person.avatar} loading='lazy'
                             style={{
                                 width: '12rem',
                                 height: '12rem',
